@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ('./partials/head.ejs') %>
-<body>
+<body class="text-center">
     <%- include ('./partials/header.ejs') %>
 
     <% for(let i = 0; i < teams.length; i++) { %>
-        <a href="/teams/<%= teams[i].id %>">
+        <a href="/teams/<%= teams[i]._id %>">
             <img src='<%= teams[i].img %>' alt="<%= teams.name %>"/>
         </a>
     <% } %>

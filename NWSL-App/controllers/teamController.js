@@ -35,7 +35,7 @@ const index = async(req, res) => {
 }
 
 // SHOW
-const show = async(req, ers) => {
+const show = async(req, res) => {
     try{
         console.log(req.params.id)
         const index = req.params.id

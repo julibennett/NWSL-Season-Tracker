@@ -4,8 +4,15 @@
 <body>
     <%- include ("./partials/header.ejs") %>
 
+    <h1 class="p-2 text-center"> <%=team.name.toUpperCase() %> </h1>
 
+    <p>
+        <ul>
+            <%= team.roster %>
+        </ul>
+    </p>
 
+    <a href='/teams'>Back</a>
 
     <%- include ("./partials/footer.ejs") %>
 </body>
