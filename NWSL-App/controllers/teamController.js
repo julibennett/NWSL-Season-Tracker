@@ -87,7 +87,14 @@ const seed = async(req, res) => {
 }
 
 // DELETE
-
+const destroy = async(req, res) => {
+    try{
+        await Team.findByIdAndDelete(req.params.id)
+        res.redirect('/teams')
+    } catch(err) {
+        console.log(err)
+    }
+}
 
 // EDIT
 
@@ -100,4 +107,5 @@ module.exports = {
     index,
     show,
     seed,
+    destroy,
 }
