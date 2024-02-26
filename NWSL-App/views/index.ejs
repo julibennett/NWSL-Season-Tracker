@@ -3,5 +3,13 @@
     <%- include ('./partials/head.ejs') %>
 <body>
     <%- include ('./partials/header.ejs') %>
+
+    <% for(let i = 0; i < teams.length; i++) { %>
+        <a href="/teams/<%= teams[i].id %>">
+            <%= teams[i].img %>
+        </a>
+    <% } %>
+
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
