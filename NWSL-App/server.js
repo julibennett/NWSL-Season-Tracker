@@ -7,9 +7,9 @@ const session = require('express-session')
 
 // MIDDLEWARE
 app.use(express.static('public'))
-app.use(express.json()) // express.json() allows our server to accept json 
-app.use(express.urlencoded({extended: true})) // express.urlencoded({extended:true})
-app.use(methodOverride('_method')) // allows us to override forms POST request.
+app.use(express.json()) 
+app.use(express.urlencoded({extended: true})) 
+app.use(methodOverride('_method')) 
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
