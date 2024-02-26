@@ -97,7 +97,15 @@ const destroy = async(req, res) => {
 }
 
 // EDIT
-
+const editForm = async(req, res) => {
+    try{
+        const index = req.params.id
+        const team = await Team.findByIdAndUpdate(index, req.body, {new: true})
+        res.redirect('/teams')
+    } catch(err) {
+        console.log(err)
+    }
+}
 
 // UPDATE
 
@@ -108,4 +116,5 @@ module.exports = {
     show,
     seed,
     destroy,
+    edit: editForm,
 }
