@@ -7,5 +7,5 @@ router.use(isAuthenticated)
 router.get('/', teamCtrl.index)
 router.get('/new', teamCtrl.new)
 router.post('/', teamCtrl.create)
-
+router.get('/seed', teamCtrl.seed)
 router.get('/:id', teamCtrl.show)

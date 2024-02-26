@@ -52,7 +52,39 @@ const show = async(req, ers) => {
 }
 
 // SEED
-
+const seed = async(req, res) => {
+    try{
+        const teams = await Team.create([
+            {
+                name: 'Portland Thorns',
+                roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
+                upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
+                wins: 5,
+                losses: 1,
+                highestScorer: 'Sophia Smith'
+            },
+            {
+                name: 'Portland Thorns',
+                roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
+                upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
+                wins: 5,
+                losses: 1,
+                highestScorer: 'Sophia Smith'
+            },
+            {
+                name: 'Portland Thorns',
+                roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
+                upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
+                wins: 5,
+                losses: 1,
+                highestScorer: 'Sophia Smith'
+            }
+        ])
+        res.redirect('/teams')
+    } catch(err) {
+        console.log(err)
+    }
+}
 
 // DELETE
 
@@ -67,4 +99,5 @@ module.exports = {
     new: newForm,
     index,
     show,
+    seed,
 }

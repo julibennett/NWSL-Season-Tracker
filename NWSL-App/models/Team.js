@@ -4,7 +4,9 @@ const teamSchema = new mongoose.Schema({
     name: {type: String, required: true}, 
     roster: [String],
     upcomingGames: [String],
-    seasonStats: [String]
+    wins: Number,
+    losses: Number,
+    highestScorer: String,
 }, {timestamps: true})
 
 const Team = mongoose.model('Team', teamSchema)
