@@ -21,7 +21,18 @@ const create = async (req, res) => {
 }
 
 // INDEX
-
+const index = async(req, res) => {
+    try{
+        const teams = await Team.find()
+        res.render('index.ejs', {
+            teams,
+            tabTitle: 'Home',
+            currentUser: req.session.currentUser
+        })
+    } catch(err) {
+        console.log(err)
+    }
+}
 
 // SHOW
 
