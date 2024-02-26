@@ -24,4 +24,8 @@ app.use('/teams', teamRoutes)
 app.use('/users', userController)
 app.use('/sessions', sessionsController)
 
-app.listen(3000, () => {console.log('The server is tracking womens soccer on 3000 !!!')})
+app.get('/', (req, res) => {
+    res.redirect('/teams/')
+})
+
+app.listen(3000, () => {console.log('The server is tracking womens soccer on 3000!!!')})
