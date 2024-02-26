@@ -11,3 +11,6 @@ router.get('/seed', teamCtrl.seed)
 router.get('/:id', teamCtrl.show)
 router.delete('/:id', teamCtrl.destroy)
 router.get('/:id/edit', teamCtrl.edit)
+router.put('/:id', teamCtrl.update)
+
+module.exports = router

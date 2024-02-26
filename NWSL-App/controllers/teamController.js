@@ -99,6 +99,20 @@ const destroy = async(req, res) => {
 // EDIT
 const editForm = async(req, res) => {
     try{
+       const team = await Team.findById(req.params.id)
+       res.render('edit.ejs', {
+        team,
+        tabTitle: 'Edit Team',
+        currentUser: req.session.currentUser
+       }) 
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+// UPDATE
+const update = async(req, res) => {
+    try{
         const index = req.params.id
         const team = await Team.findByIdAndUpdate(index, req.body, {new: true})
         res.redirect('/teams')
@@ -106,8 +120,6 @@ const editForm = async(req, res) => {
         console.log(err)
     }
 }
-
-// UPDATE
 
 module.exports = {
     create,
@@ -117,4 +129,5 @@ module.exports = {
     seed,
     destroy,
     edit: editForm,
+    update
 }
