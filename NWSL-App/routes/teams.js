@@ -4,4 +4,5 @@ const isAuthenticated = require('../controllers/isAuthenticated')
 
 router.use(isAuthenticated)
 
+router.get('/new', teamCtrl.new)
 router.post('/', teamCtrl.create)

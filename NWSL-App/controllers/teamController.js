@@ -1,12 +1,20 @@
 const Team = require('../models/Team.js')
 
 // NEW
-
+const newForm = (req, res) => {
+    try{
+        res.render('new.ejs', {tabTitle: 'New Team', currentUser: req.session.currentUser})
+    } catch(err) {
+        console.log(err)
+    }
+}
 
 // CREATE
 const create = async (req, res) => {
     try{
-        res.render('new.ejs', {tabTitle: 'New Team', currentUser: req.session.currentUser})
+        const newTeam = await Team.create(req.body)
+        console.log(newTeam)
+        res.redirect('/teams')
     } catch(err) {
         console.log(err)
     }
@@ -31,4 +39,5 @@ const create = async (req, res) => {
 
 module.exports = {
     create,
+    new: newForm,
 }
