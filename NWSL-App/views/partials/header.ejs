@@ -1,0 +1,19 @@
+<header class="navbar">
+    <div class="container">
+      <h1>NWSL Season Tracker</h1>
+      <a class="nav-link" href="/teams">All Teams</a>
+      <% if (currentUser) { %>
+        <a class="nav-link" href="/teams/new">Add a New Team</a>
+        <li class="nav-link">Welcome <%= currentUser.username %></li>
+        <li class="nav-link">
+          <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Log Out" />
+          </form>
+        </li>
+        <% } else { %>
+        <li><a class="nav-link" href="/users/new">Sign Up</a></li>
+        <li><a class="nav-link" href="/sessions/new">Log In</a></li>
+        <% } %>
+    </div>
+  </header>
+  
