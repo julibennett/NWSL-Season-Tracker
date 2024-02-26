@@ -35,7 +35,21 @@ const index = async(req, res) => {
 }
 
 // SHOW
-
+const show = async(req, ers) => {
+    try{
+        console.log(req.params.id)
+        const index = req.params.id
+        const team = await Team.findById(index)
+        console.log(team)
+        res.render('show.ejs', {
+            team,
+            tabTitle: team.name,
+            currentUser: req.session.currentUser
+        })
+    } catch(err) {
+        console.log(err)
+    }
+}
 
 // SEED
 
@@ -51,4 +65,6 @@ const index = async(req, res) => {
 module.exports = {
     create,
     new: newForm,
+    index,
+    show,
 }
