@@ -76,7 +76,7 @@ const seed = async(req, res) => {
             {
                 name: 'Portland Thorns',
                 img: 'https://mir-s3-cdn-cf.behance.net/projects/404/ca5e5c138504091.621ed850bf2ff.jpg',
-                roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
+                roster: ['Sophia Smith', ' Morgan Weaver', ' Kelli Hubly', ' Hina Sugita', ' Bella Bixby'],
                 upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
                 wins: 5,
                 losses: 1,

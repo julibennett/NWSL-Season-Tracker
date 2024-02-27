@@ -5,7 +5,11 @@ a, li, h1, form, footer {
 }
 
 img {
-    margin-top: 100px;
+   
     padding: 10px;
+}
+
+h1{
+    margin-top: 200px;
 }
 

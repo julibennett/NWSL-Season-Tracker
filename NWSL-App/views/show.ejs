@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ("./partials/head.ejs") %>
-<body>
+<body style="padding-top: 70px;">
     <%- include ("./partials/header.ejs") %>
 
     <h1 class="p-2 text-center"> <%=team.name.toUpperCase() %> </h1>
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            Roster:
+        </div>
+            <ul class="list-group list-group-flush">
+            <% team.roster.forEach(player => { %>
+                <li class="list-group-item"><%= player %></li>  
+            <% }); %>
+            </ul>
+    </div>
 
-    <p>
-        <ul>
-            <%= team.roster %>
-        </ul>
-    </p>
-
-    <a href='/teams'>Back</a>
+    <div class="text-center">
+        <a href='/teams' >Back</a>
+    </div>
+    
 
     <%- include ("./partials/footer.ejs") %>
 </body>
