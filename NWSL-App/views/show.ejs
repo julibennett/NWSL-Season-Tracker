@@ -7,17 +7,34 @@
     <h1 class="p-2 text-center"> <%=team.name.toUpperCase() %> </h1>
     
     <div class="card" style="width: 18rem;">
-        <div class="card-header">
+        <div class="card-header text-center" id="roster">
             Roster:
         </div>
             <ul class="list-group list-group-flush">
             <% team.roster.forEach(player => { %>
-                <li class="list-group-item"><%= player %></li>  
-            <% }); %>
+                <li class="list-group-item text-center"><%= player %></li>  
+            <% }) %>
             </ul>
     </div>
 
+    <div class="card-deck-horizontal text-center">
+        <% team.upcomingGames.forEach(game => { %>
+            <div class="card" style="width: 15rem">
+                <div class="card-body">
+                    <h5 class="card-title">Upcoming Game</h5>
+                    <p class="card-text"><%= game %></p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
     <div class="text-center">
+        <form method="POST" action="/teams/<%= team.id %>?_method=DELETE">
+            <input
+            class="btn btn-danger"
+            type="submit" value="DELETE"/>
+        </form>
+
         <a href='/teams' >Back</a>
     </div>
     

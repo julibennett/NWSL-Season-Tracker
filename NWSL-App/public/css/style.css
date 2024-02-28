@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/soccer-league');
 
-a, li, h1, form, footer {
+a, h1, form, footer, #roster {
     font-family: 'Soccer League', sans-serif;
 }
 
@@ -11,5 +11,17 @@ img {
 
 h1{
     margin-top: 200px;
+}
+
+.card-deck-horizontal {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    justify-content: right;
+}
+
+.card {
+    flex: 0 0 auto; 
+    margin-right: 15px; 
 }
 
