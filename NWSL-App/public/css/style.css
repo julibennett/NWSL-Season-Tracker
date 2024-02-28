@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/soccer-league');
 
-a, h1, form, footer, #roster {
+a, h1, form, footer, #roster, #seasonStats {
     font-family: 'Soccer League', sans-serif;
 }
 
@@ -15,9 +15,10 @@ h1{
 
 .card-deck-horizontal {
     display: flex;
-    flex-wrap: nowrap; 
+    flex-wrap: wrap; 
     overflow-x: auto; 
     justify-content: right;
+    flex-direction: column;
 }
 
 .card {

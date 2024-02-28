@@ -6,26 +6,47 @@
 
     <h1 class="p-2 text-center"> <%=team.name.toUpperCase() %> </h1>
     
-    <div class="card" style="width: 18rem;">
-        <div class="card-header text-center" id="roster">
-            Roster:
-        </div>
-            <ul class="list-group list-group-flush">
-            <% team.roster.forEach(player => { %>
-                <li class="list-group-item text-center"><%= player %></li>  
-            <% }) %>
-            </ul>
-    </div>
-
-    <div class="card-deck-horizontal text-center">
-        <% team.upcomingGames.forEach(game => { %>
-            <div class="card" style="width: 15rem">
-                <div class="card-body">
-                    <h5 class="card-title">Upcoming Game</h5>
-                    <p class="card-text"><%= game %></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" >
+                    <div class="card-header text-center" id="roster">
+                        Roster:
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <% team.roster.forEach(player => { %>
+                        <li class="list-group-item text-center"><%= player %></li>  
+                    <% }) %>
+                    </ul>
                 </div>
             </div>
-        <% }) %>
+            <div class="col-md-4">
+                <div class="card-deck-horizontal text-center">
+                    <% team.upcomingGames.forEach(game => { %>
+                        <div class="card" >
+                            <div class="card-body">
+                                <h5 class="card-title">Upcoming Game</h5>
+                                <p class="card-text"><%= game %></p>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header text-center" id="seasonStats">
+                        Season Stats:
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li>Team wins: <%= team.wins %></li>
+                            <li>Team losses: <%= team.losses %></li> 
+                            <li>Highest Scorer: <%= team.highestScorer %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="text-center">
@@ -37,7 +58,6 @@
 
         <a href='/teams' >Back</a>
     </div>
-    
 
     <%- include ("./partials/footer.ejs") %>
 </body>
