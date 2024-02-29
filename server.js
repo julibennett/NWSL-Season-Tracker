@@ -28,4 +28,4 @@ app.get('/', (req, res) => {
     res.redirect('/teams/')
 })
 
-app.listen(3000, () => {console.log('The server is tracking womens soccer on 3000!!!')})
+app.listen(process.env.PORT, () => {console.log('The server is tracking womens soccer on 3000!!!')})
