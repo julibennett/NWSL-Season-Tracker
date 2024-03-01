@@ -4,13 +4,13 @@
 <body style="padding-top: 70px;">
     <%- include ("./partials/header.ejs") %>
 
-    <h1 class="font-bold underline"> <%=team.name.toUpperCase() %> </h1>
+    <h1 class="font-bold underline bg-blue-500"> <%=team.name.toUpperCase() %> </h1>
     
     <div>
         <div>
             <div>
                 <div>
-                    <div>
+                    <div class="text-center underline bg-yellow-400">
                         Roster:
                     </div>
                     <ul>
@@ -34,7 +34,7 @@
             </div>
             <div>
                 <div>
-                    <div id="seasonStats"></div>
+                    <div class="text-center" id="seasonStats"></div>
                         Season Stats:
                     </div>
                     <div>
@@ -49,8 +49,8 @@
         </div>
     </div>
 
-    <div class="text-center">
-        <form method="POST" action="/teams/<%= team.id %>?_method=DELETE">
+    <div class="text-center bg-red-500">
+        <form method="POST" action="/teams/<%= team.id %>?_method=DELETE" >
             <input
             class="btn btn-danger"
             type="submit" value="DELETE"/>
