@@ -4,41 +4,41 @@
 <body style="padding-top: 70px;">
     <%- include ("./partials/header.ejs") %>
 
-    <h1 class="p-2 text-center"> <%=team.name.toUpperCase() %> </h1>
+    <h1 class="font-bold underline"> <%=team.name.toUpperCase() %> </h1>
     
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card" >
-                    <div class="card-header text-center" id="roster">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
                         Roster:
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul>
                     <% team.roster.forEach(player => { %>
-                        <li class="list-group-item text-center"><%= player %></li>  
+                        <li><%= player %></li>  
                     <% }) %>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card-deck-horizontal text-center">
+            <div>
+                <div>
                     <% team.upcomingGames.forEach(game => { %>
-                        <div class="card" >
-                            <div class="card-body">
-                                <h5 class="card-title">Upcoming Game</h5>
-                                <p class="card-text"><%= game %></p>
+                        <div>
+                            <div>
+                                <h5>Upcoming Game</h5>
+                                <p><%= game %></p>
                             </div>
                         </div>
                     <% }) %>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center" id="seasonStats">
+            <div>
+                <div>
+                    <div id="seasonStats"></div>
                         Season Stats:
                     </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
+                    <div>
+                        <ul>
                             <li>Team wins: <%= team.wins %></li>
                             <li>Team losses: <%= team.losses %></li> 
                             <li>Highest Scorer: <%= team.highestScorer %></li>
