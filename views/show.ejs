@@ -36,6 +36,13 @@
                 <div class="text-center bg-white shadow-md rounded-lg p-4">
                     <h5>Upcoming Game</h5>
                     <p><%= game %></p>
+                        <form>
+                            <label class="switch">
+                                <input type="checkbox" id="<%= game %>" name="<%= game %>_attending"/>
+                                <span class="slider-round"></span>
+                            </label>
+                            <label for="<%= game %>">Attending?</label>
+                        </form>
                 </div>
                 <% }) %>
             </div>
