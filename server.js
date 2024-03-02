@@ -11,7 +11,7 @@ const sessionsController = require('./controllers/sessions')
 
 // MIDDLEWARE
 app.use(express.static('public'))
-// app.use('/css', express.static('dist'))
+
 app.use(express.json()) 
 app.use(express.urlencoded({extended: true})) 
 app.use(methodOverride('_method')) 

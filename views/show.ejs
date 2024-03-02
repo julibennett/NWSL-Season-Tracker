@@ -4,16 +4,16 @@
 <body style="padding-top: 70px;">
     <%- include ("./partials/header.ejs") %>
 
-    <h1 class="font-bold underline bg-blue-500"> <%=team.name.toUpperCase() %> </h1>
+    <h1 class="font-bold underline text-center"> <%=team.name.toUpperCase() %> </h1>
     
     <div>
         <div>
             <div>
                 <div>
-                    <div class="text-center underline bg-yellow-400">
+                    <div class="text-center underline text-red-500">
                         Roster:
                     </div>
-                    <ul>
+                    <ul class="text-center">
                     <% team.roster.forEach(player => { %>
                         <li><%= player %></li>  
                     <% }) %>
@@ -24,7 +24,7 @@
                 <div>
                     <% team.upcomingGames.forEach(game => { %>
                         <div>
-                            <div>
+                            <div class="text-center">
                                 <h5>Upcoming Game</h5>
                                 <p><%= game %></p>
                             </div>
@@ -32,12 +32,12 @@
                     <% }) %>
                 </div>
             </div>
-            <div>
+            <div class="text-center">
                 <div>
                     <div class="text-center" id="seasonStats"></div>
                         Season Stats:
                     </div>
-                    <div>
+                    <div class="text-center">
                         <ul>
                             <li>Team wins: <%= team.wins %></li>
                             <li>Team losses: <%= team.losses %></li> 
