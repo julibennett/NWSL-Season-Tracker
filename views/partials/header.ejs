@@ -1,20 +1,18 @@
-<header class="navbar fixed-top navbar-light bg-light">
-  
-    <div class="container text-center">
-      <h1 class="underline">NWSL Season Tracker</h1>
-      <a class="nav-link" href="/teams">All Teams</a>
+<header class="bg-light fixed top-0 inset-x-0 z-50 shadow">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="text-4xl font-bold">NWSL Season Tracker</h1>
+    <div class="flex items-center">
+      <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/teams">All Teams</a>
       <% if (currentUser) { %>
-        <a class="nav-link" href="/teams/new">Add a New Team</a>
-        <li class="nav-link">Welcome <%= currentUser.username %></li>
-        <li class="nav-link">
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Log Out" />
-          </form>
-        </li>
-        <% } else { %>
-        <li><a class="nav-link" href="/users/new">Sign Up</a></li>
-        <li><a class="nav-link" href="/sessions/new">Log In</a></li>
-        <% } %>
+        <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/teams/new">Add a New Team</a>
+        <span class="px-3 py-2">Welcome <%= currentUser.username %></span>
+        <form class="inline" action="/sessions?_method=DELETE" method="POST">
+          <input type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" value="Log Out" />
+        </form>
+      <% } else { %>
+        <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/users/new">Sign Up</a>
+        <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/sessions/new">Log In</a>
+      <% } %>
     </div>
-  </header>
-  
+  </div>
+</header>

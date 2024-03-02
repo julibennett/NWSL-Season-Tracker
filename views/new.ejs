@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ("./partials/head.ejs") %>
+<body>
+    <%- include ("./partials/header.ejs") %>
+
+    <h1>Create a New Team</h1>
+    <h4>With more teams joining the league each year, there's always more stats to track!</h4>
+
+    <form action="/teams" method="POST" class="font-mono">
+
+        <label for="name"></label>
+        <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Team name"
+        />
+
+        <label for="roster"></label>
+        <input
+        type="text"
+        name="roster"
+        id="roster"
+        placeholder="Roster (player names)"
+        />
+
+        <label for="upcomingGames"></label>
+        <input
+        type="text"
+        name="upcomingGames"
+        id="upcomingGames"
+        placeholder="Upcoming games"
+        />
+
+        <label for="wins"></label>
+        <input
+        type="number"
+        name="wins"
+        id="wins"
+        placeholder="Number of wins"
+        />
+
+        <label for="losses"></label>
+        <input
+        type="number"
+        name="losses"
+        id="losses"
+        placeholder="Number of losses"
+        />
+
+        <label for="highestScorer"></label>
+        <input
+        type="text"
+        name="highestScorer"
+        id="highestScorer"
+        placeholder="Highst scoring player"
+        />
+
+        <input type="submit" class="text-center" value="Create Team"/>
+    </form>
+    <%- include ("./partials/footer.ejs") %>
+</body>
+</html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ('./partials/head.ejs') %>
-<body class="text-center">
+<body class="text-center pt-20 md:pt-16">
     <%- include ('./partials/header.ejs') %>
-
+<!-- Use Tailwind CSS classes for Flexbox layout, centering, and wrapping -->
+<div class="flex justify-center items-center flex-wrap mx-auto">
     <% for(let i = 0; i < teams.length; i++) { %>
-        <a href="/teams/<%= teams[i]._id %>">
-            <img src='<%= teams[i].img %>' alt="<%= teams.name %>"/>
+        <a href="/teams/<%= teams[i]._id %>" class="m-2"> <!-- Adjust margin as needed -->
+            <img src="<%= teams[i].img %>" alt="<%= teams[i].name %>" class="w-50 h-auto"/> <!-- Adjust width as needed -->
         </a>
     <% } %>
-
+</div>
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
