@@ -9,7 +9,7 @@
     </div>
 
     <div class="flex flex-wrap md:flex-nowrap justify-center md:justify-start">
-        <!-- Roster Container -->
+        
         <div class="md:w-1/4 p-4 bg-white shadow-md rounded-lg">
             <div class="underline text-red-500 mb-2">
                 Roster:
@@ -21,16 +21,16 @@
             </ul>
         </div>
 
-        <!-- Season Stats and Upcoming Games Container -->
+        
         <div class="md:flex-1 p-4">
-            <!-- Season Stats -->
+            
             <div class="flex justify-around bg-white shadow-md rounded-lg mb-4 p-4">
                 <div class="bg-green-500 p-1.5 rounded-lg">Team wins: <%= team.wins %></div>
                 <div class="bg-red-500 p-1.5 rounded-lg">Team losses: <%= team.losses %></div>
                 <div class="bg-blue-500 p-1.5 rounded-lg">Highest Scorer: <%= team.highestScorer %></div>
             </div>
 
-            <!-- Upcoming Games in a 2x2 grid -->
+            
             <div class="grid grid-cols-2 gap-4">
                 <% team.upcomingGames.forEach(game => { %>
                 <div class="text-center bg-white shadow-md rounded-lg p-4">

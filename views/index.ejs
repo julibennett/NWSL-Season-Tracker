@@ -3,11 +3,11 @@
     <%- include ('./partials/head.ejs') %>
 <body class="text-center pt-20 md:pt-16">
     <%- include ('./partials/header.ejs') %>
-<!-- Use Tailwind CSS classes for Flexbox layout, centering, and wrapping -->
+
 <div class="flex justify-center items-center flex-wrap mx-auto dark:bg-gray-800"">
     <% for(let i = 0; i < teams.length; i++) { %>
-        <a href="/teams/<%= teams[i]._id %>" class="m-2"> <!-- Adjust margin as needed -->
-            <img src="<%= teams[i].img %>" alt="<%= teams[i].name %>" class="w-50 h-auto border-solid border-4 border-light-blue-500" id="card-image-hover"/> <!-- Adjust width as needed -->
+        <a href="/teams/<%= teams[i]._id %>" class="m-2"> 
+            <img src="<%= teams[i].img %>" alt="<%= teams[i].name %>" class="w-50 h-auto border-solid border-4 border-light-blue-500" id="card-image-hover"/> 
         </a>
     <% } %>
 </div>

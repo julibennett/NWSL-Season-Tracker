@@ -51,6 +51,14 @@ const show = async(req, res) => {
     }
 }
 
+const myGames = async(req, res) => {
+    try{
+        
+    }catch(err) {
+        console.log(err)
+    }
+}
+
 // SEED
 const seed = async(req, res) => {
     try{
