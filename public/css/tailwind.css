@@ -1,0 +1,30 @@
+
+
+/* Custom CSS rules */
+@import url('https://fonts.cdnfonts.com/css/soccer-league');
+
+a, h1, form, footer, #roster, #seasonStats {
+    font-family: 'Soccer League', sans-serif;
+}
+
+img {
+    padding: 10px;
+}
+
+h1 {
+    margin-top: 200px;
+}
+
+.card-deck-horizontal {
+    display: flex;
+    flex-wrap: wrap; 
+    overflow-x: auto; 
+    justify-content: right;
+    flex-direction: column;
+}
+
+.card {
+    flex: 0 0 auto; 
+    margin-right: 15px; 
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhaWx3aW5kLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJ0YWlsd2luZC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAdGFpbHdpbmQgYmFzZTtcbkB0YWlsd2luZCBjb21wb25lbnRzO1xuQHRhaWx3aW5kIHV0aWxpdGllcztcblxuLyogQ3VzdG9tIENTUyBydWxlcyAqL1xuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuY2RuZm9udHMuY29tL2Nzcy9zb2NjZXItbGVhZ3VlJyk7XG5cbmEsIGgxLCBmb3JtLCBmb290ZXIsICNyb3N0ZXIsICNzZWFzb25TdGF0cyB7XG4gICAgZm9udC1mYW1pbHk6ICdTb2NjZXIgTGVhZ3VlJywgc2Fucy1zZXJpZjtcbn1cblxuaW1nIHtcbiAgICBwYWRkaW5nOiAxMHB4O1xufVxuXG5oMSB7XG4gICAgbWFyZ2luLXRvcDogMjAwcHg7XG59XG5cbi5jYXJkLWRlY2staG9yaXpvbnRhbCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LXdyYXA6IHdyYXA7IFxuICAgIG92ZXJmbG93LXg6IGF1dG87IFxuICAgIGp1c3RpZnktY29udGVudDogcmlnaHQ7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cblxuLmNhcmQge1xuICAgIGZsZXg6IDAgMCBhdXRvOyBcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7IFxufVxuXG5cbiJdfQ== */
