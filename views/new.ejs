@@ -1,64 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include ("./partials/head.ejs") %>
-<body>
-    <%- include ("./partials/header.ejs") %>
+<html lang="en" class="h-full>
+<%- include("./partials/head.ejs") %>
+<body class="bg-gray-100 flex flex-col justify-center items-center min-h-screen h-full pt-20 md:pt-4">
+    <%- include("./partials/header.ejs") %>
 
-    <h1>Create a New Team</h1>
-    <h4>With more teams joining the league each year, there's always more stats to track!</h4>
+    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-center mb-4">Create a New Team</h1>
+        <h4 class="text-md text-center mb-8">With more teams joining the league each year, there's always more stats to track!</h4>
 
-    <form action="/teams" method="POST" class="font-mono">
+        <form action="/teams" method="POST" class="font-mono space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-bold text-gray-700">Team Name</label>
+                <input type="text" name="name" id="name" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
 
-        <label for="name"></label>
-        <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Team name"
-        />
+            <div>
+                <label for="roster" class="block text-sm font-bold text-gray-700">Roster</label>
+                <input type="text" name="roster" id="roster" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
 
-        <label for="roster"></label>
-        <input
-        type="text"
-        name="roster"
-        id="roster"
-        placeholder="Roster (player names)"
-        />
+            <div>
+                <label for="upcomingGames" class="block text-sm font-bold text-gray-700">Upcoming Games</label>
+                <input type="text" name="upcomingGames" id="upcomingGames" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
 
-        <label for="upcomingGames"></label>
-        <input
-        type="text"
-        name="upcomingGames"
-        id="upcomingGames"
-        placeholder="Upcoming games"
-        />
+            <div>
+                <label for="wins" class="block text-sm font-bold text-gray-700">Wins</label>
+                <input type="number" name="wins" id="wins" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
 
-        <label for="wins"></label>
-        <input
-        type="number"
-        name="wins"
-        id="wins"
-        placeholder="Number of wins"
-        />
+            <div>
+                <label for="losses" class="block text-sm font-bold text-gray-700">Losses</label>
+                <input type="number" name="losses" id="losses" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
 
-        <label for="losses"></label>
-        <input
-        type="number"
-        name="losses"
-        id="losses"
-        placeholder="Number of losses"
-        />
+            <div>
+                <label for="highestScorer" class="block text-sm font-bold text-gray-700">Highest Scoring Player</label>
+                <input type="text" name="highestScorer" id="highestScorer" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
 
-        <label for="highestScorer"></label>
-        <input
-        type="text"
-        name="highestScorer"
-        id="highestScorer"
-        placeholder="Highst scoring player"
-        />
+            <input type="submit" value="Create Team" class="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" />
+        </form>
+    </div>
 
-        <input type="submit" class="text-center" value="Create Team"/>
-    </form>
-    <%- include ("./partials/footer.ejs") %>
+    <%- include("./partials/footer.ejs") %>
 </body>
 </html>
