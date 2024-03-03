@@ -1,4 +1,5 @@
-const Team = require('../models/Team.js')
+const {Game, Team} = require('../models/Team.js')
+
 
 // NEW
 const newForm = (req, res) => {
@@ -50,18 +51,13 @@ const show = async(req, res) => {
         console.log(err)
     }
 }
-
-const myGames = async(req, res) => {
-    try{
-        const userId = req.session.userId
-        const attendingGames = await Game.find({attendingUsers: userId})
-        res.render('myGames.ejs', {
-            attendingGames
-        })
-    }catch(err) {
-        console.log(err)
-    }
-}
+// const myGames = async(req, res) => {
+//     try{
+        
+//     }catch(err) {
+//         console.log(err)
+//     }
+// }
 
 // SEED
 const seed = async(req, res) => {
@@ -71,7 +67,33 @@ const seed = async(req, res) => {
                 name: 'Portland Thorns',
                 img: 'https://mir-s3-cdn-cf.behance.net/projects/404/ca5e5c138504091.621ed850bf2ff.jpg',
                 roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
-                upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
+                upcomingGames: [
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    }
+
+                ],
                 wins: 5,
                 losses: 1,
                 highestScorer: 'Sophia Smith'
@@ -80,7 +102,33 @@ const seed = async(req, res) => {
                 name: 'Portland Thorns',
                 img: 'https://mir-s3-cdn-cf.behance.net/projects/404/ca5e5c138504091.621ed850bf2ff.jpg',
                 roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
-                upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
+                upcomingGames: [
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    }
+
+                ],
                 wins: 5,
                 losses: 1,
                 highestScorer: 'Sophia Smith'
@@ -88,12 +136,38 @@ const seed = async(req, res) => {
             {
                 name: 'Portland Thorns',
                 img: 'https://mir-s3-cdn-cf.behance.net/projects/404/ca5e5c138504091.621ed850bf2ff.jpg',
-                roster: ['Sophia Smith', ' Morgan Weaver', ' Kelli Hubly', ' Hina Sugita', ' Bella Bixby'],
-                upcomingGames: ['March 3rd vs KC Current @ Home', 'March 27th vs. Gotham FC @ Gotham', 'April 11th vs. San Diego Wave @ San Diego', 'April 20th vs. Angel City FC @ Home'],
+                roster: ['Sophia Smith', 'Morgan Weaver', 'Kelli Hubly', 'Hina Sugita', 'Bella Bixby'],
+                upcomingGames: [
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    },
+                    {
+                        name: 'Portland Thorns',
+                        date: 'March 3rd, 2024',
+                        location: 'Providence Park',
+                        opponent: 'KC Current'
+                    }
+
+                ],
                 wins: 5,
                 losses: 1,
                 highestScorer: 'Sophia Smith'
-            }
+            },
         ])
         res.redirect('/teams')
     } catch(err) {
@@ -145,5 +219,4 @@ module.exports = {
     destroy,
     edit: editForm,
     update,
-    myGames
 }

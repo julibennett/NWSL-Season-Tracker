@@ -32,20 +32,26 @@
 
             
             <div class="grid grid-cols-2 gap-4">
-                <% team.upcomingGames.forEach(game => { %>
+                <% team.upcomingGames.forEach((game, index) => { %>
                 <div class="text-center bg-white shadow-md rounded-lg p-4">
                     <h5>Upcoming Game</h5>
-                    <p><%= game %></p>
-                        <form action="teams/myGames" method="POST">
+                    <p>Name: <%= game.name %></p>
+                    <p>Date: <%= game.date %></p>
+                    <p>Location: <%= game.location %></p>
+                    <p>Opponent: <%= game.opponent %></p>
+                        <form action="/myGames" method="POST">
                             <label class="switch">
-                                <input type="checkbox" id="<%= game %>" name="<%= game %>_attending"/>
+                                <!-- Use index or a unique identifier as the ID -->
+                                <input type="checkbox" id="game<%= index %>" name="game<%= index %>_attending"/>
                                 <span class="slider-round"></span>
                             </label>
-                            <label for="<%= game %>">Attending?</label>
+                            <label for="game<%= index %>">Attending?</label>
+                            <input class="bg-gray-600 hover:bg-green-500 text-white font-bold py-1 px-2 rounded cursor-pointer" type="submit" value="Submit"/>
                         </form>
                 </div>
                 <% }) %>
             </div>
+            
         </div>
     </div>
 
