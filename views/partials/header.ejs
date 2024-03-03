@@ -1,11 +1,12 @@
-<header class="bg-light fixed top-0 inset-x-0 z-50 shadow">
+<header class="bg-white fixed top-0 inset-x-0 z-50 shadow">
   <div class="container mx-auto flex justify-between items-center p-4">
     <h1 class="text-4xl font-bold">NWSL Season Tracker</h1>
     <div class="flex items-center">
       <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/teams">All Teams</a>
       <% if (currentUser) { %>
         <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/teams/new">Add a New Team</a>
-        <span class="px-3 py-2">Welcome <%= currentUser.username %></span>
+        <a class="text-blue-500 hover:text-blue-700 px-3 py-2" href="/teams/myGames">My Games</a>
+        <span class="px-3 py-2">Welcome, <%= currentUser.username %></span>
         <form class="inline" action="/sessions?_method=DELETE" method="POST">
           <input type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" value="Log Out" />
         </form>

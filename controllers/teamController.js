@@ -53,7 +53,11 @@ const show = async(req, res) => {
 
 const myGames = async(req, res) => {
     try{
-        
+        const userId = req.session.userId
+        const attendingGames = await Game.find({attendingUsers: userId})
+        res.render('myGames.ejs', {
+            attendingGames
+        })
     }catch(err) {
         console.log(err)
     }
@@ -140,5 +144,6 @@ module.exports = {
     seed,
     destroy,
     edit: editForm,
-    update
+    update,
+    myGames
 }
