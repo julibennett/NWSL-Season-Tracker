@@ -39,7 +39,7 @@
                     <p>Date: <%= game.date %></p>
                     <p>Location: <%= game.location %></p>
                     <p>Opponent: <%= game.opponent %></p>
-                        <form action="/teams//myGames" method="POST">
+                        <form action="/myGames/" method="POST">
                             <input type="hidden" name="gameId" value="<%= game.id %>"/>
                             <label class="switch">
                                 <input type="checkbox" id="game<%= index %>" name="game<%= index %>_attending"/>
