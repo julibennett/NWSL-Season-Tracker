@@ -39,9 +39,9 @@
                     <p>Date: <%= game.date %></p>
                     <p>Location: <%= game.location %></p>
                     <p>Opponent: <%= game.opponent %></p>
-                        <form action="/myGames" method="POST">
+                        <form action="/teams//myGames" method="POST">
+                            <input type="hidden" name="gameId" value="<%= game.id %>"/>
                             <label class="switch">
-                                <!-- Use index or a unique identifier as the ID -->
                                 <input type="checkbox" id="game<%= index %>" name="game<%= index %>_attending"/>
                                 <span class="slider-round"></span>
                             </label>

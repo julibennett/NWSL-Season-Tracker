@@ -4,6 +4,7 @@ const app = express()
 require('./config/database')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const bodyParser = require('body-parser');
 
 const teamRoutes = require('./routes/teams')
 const userController = require('./controllers/userController')
@@ -14,6 +15,7 @@ app.use(express.static('public'))
 
 app.use(express.json()) 
 app.use(express.urlencoded({extended: true})) 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method')) 
 app.use(session({
     secret: process.env.SECRET,
