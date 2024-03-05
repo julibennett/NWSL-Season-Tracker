@@ -14,7 +14,7 @@ router.post('/', async(req, res) => {
         if(!foundUser) {
             res.send('<a href='/'> Sorry, that username could not be found! </a>')
         } else if(bcrypt.compareSync(req.body.password, foundUser.password)){
-            req.session.currentUser = foundUser
+            req.session.currentUser = foundUser._id
             console.log(req.session.currentUser)
             res.redirect('/')
         } else {

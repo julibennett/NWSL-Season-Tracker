@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const teamRoutes = require('./routes/teams')
 const userController = require('./controllers/userController')
 const sessionsController = require('./controllers/sessions')
+const attendanceRoutes = require('./routes/attendance')
 
 // MIDDLEWARE
 app.use(express.static('public'))
@@ -26,6 +27,7 @@ app.use(session({
 app.use('/teams', teamRoutes)
 app.use('/users', userController)
 app.use('/sessions', sessionsController)
+app.use('/attendance', attendanceRoutes)
 
 app.get('/', (req, res) => {
     res.redirect('/teams/')

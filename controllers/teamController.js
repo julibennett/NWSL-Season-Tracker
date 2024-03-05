@@ -51,26 +51,6 @@ const show = async(req, res) => {
         console.log(err)
     }
 }
-// const myGames = async(req, res) => {
-//     try{
-//         const gameId = req.body.gameId
-//         const attending = req.body.attending
-
-//         const isAttending = req.body.attending ? true : false
-
-//         // Update the database here
-//         // This is a placeholder: the actual implementation depends on your database
-//         // For example, if using MongoDB with Mongoose, it might look something like this:
-//         await Game.findByIdAndUpdate(gameId, { $set: { attending: isAttending } });
-
-//         // Redirect to a confirmation page or back to the games list
-//         // This is just an example; you might want to redirect somewhere else
-//         res.redirect('/myGames'); // Adjust the redirect URL as needed
-        
-//     }catch(err) {
-//         console.log(err)
-//     }
-// }
 
 // SEED
 const seed = async(req, res) => {
@@ -232,5 +212,4 @@ module.exports = {
     destroy,
     edit: editForm,
     update,
-    myGames
 }

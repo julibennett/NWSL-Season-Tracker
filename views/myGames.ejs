@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <%- include("./partials/head.ejs") %>
-<body>
+</head>
+<body class= 'pt-20 md:pt-18'>
     <%- include("./partials/header.ejs") %>
+
+    <h1>My Games</h1>
+    <div class="games-list">
+        <% if (attendingGames && attendingGames.length > 0) { %>
+            <% attendingGames.forEach(function(game) { %>
+                <div class="game">
+                    <h2><%= game.name %></h2>
+                    <p>Date: <%= game.date %></p>
+                    <p>Location: <%= game.location %></p>
+                    <p>Opponent: <%= game.opponent %></p>
+                    <p>Team: <%= game.teamName %></p>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>You are not attending any games.</p>
+        <% } %>
+    </div>
 
     <%- include("./partials/footer.ejs") %>
 </body>
