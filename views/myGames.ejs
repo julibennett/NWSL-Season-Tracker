@@ -6,7 +6,7 @@
 <body class= 'pt-20 md:pt-18'>
     <%- include("./partials/header.ejs") %>
 
-    <h1>My Games</h1>
+    <h1 class="text-center text-4xl">My Games</h1>
     <div class="games-list">
         <% if (attendingGames && attendingGames.length > 0) { %>
             <% attendingGames.forEach(function(game) { %>
@@ -19,7 +19,7 @@
                 </div>
             <% }) %>
         <% } else { %>
-            <p>You are not attending any games.</p>
+            <p class="text-center">You are not attending any games.</p>
         <% } %>
     </div>
 

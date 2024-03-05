@@ -13,17 +13,8 @@ h1 {
     margin-top: 200px;
 }
 
-.card-deck-horizontal {
-    display: flex;
-    flex-wrap: wrap; 
-    overflow-x: auto; 
-    justify-content: right;
-    flex-direction: column;
-}
-
-.card {
-    flex: 0 0 auto; 
-    margin-right: 15px; 
+.attending {
+    border: 3px solid rgb(85, 216, 85);
 }
 
 
