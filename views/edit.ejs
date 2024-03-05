@@ -16,13 +16,29 @@
 
             <div>
                 <label for="roster" class="block text-sm font-bold text-gray-700">Roster</label>
-                <input value="<%=team.roster%>" type="text" name="roster" id="roster" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <div id="rosterContainer">
+                    <% team.roster.forEach(function(player, index) { %>
+                        <input type="text" name="roster[<%= index %>]" value="<%= player %>" class="w-full p-2 border rounded mt-2" />
+                    <% }); %>
+                </div>
+                <button type="button" id="addPlayerButton" class="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded">Add Player</button>
             </div>
 
             <div>
-                <label for="upcomingGames" class="block text-sm font-bold text-gray-700">Upcoming Games</label>
-                <input type="text" name="upcomingGames" id="upcomingGames" placeholder="Adding games disabled for now" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" disabled />
+                <label class="block text-sm font-bold text-gray-700">Upcoming Games</label>
+                <div id="upcomingGamesContainer">
+                    <% team.upcomingGames.forEach(function(game, index) { %>
+                        <div>
+                            <input type="text" name="upcomingGames[<%= index %>][name]" value="<%= game.name %>" placeholder="Game Name" class="w-full p-2 border rounded mt-2">
+                            <input type="text" name="upcomingGames[<%= index %>][date]" value="<%= game.date %>" placeholder="Game Date" class="w-full p-2 border rounded mt-2">
+                            <input type="text" name="upcomingGames[<%= index %>][location]" value="<%= game.location %>" placeholder="Game Location" class="w-full p-2 border rounded mt-2">
+                            <input type="text" name="upcomingGames[<%= index %>][opponent]" value="<%= game.opponent %>" placeholder="Opponent" class="w-full p-2 border rounded mt-2">
+                        </div>
+                    <% }) %>
+                </div>
+                <button type="button" id="addGameButton" class="mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded">Add Game</button>
             </div>
+            
 
             <div>
                 <label for="wins" class="block text-sm font-bold text-gray-700">Wins</label>
@@ -48,6 +64,34 @@
         </form>
     </div>
 
+    <script>
+        document.getElementById('addPlayerButton').addEventListener('click', function() {
+            const container = document.getElementById('rosterContainer')
+            const newPlayerIndex = container.querySelectorAll('input').length
+        
+            let input = document.createElement('input')
+            input.type = 'text'
+            input.name = `roster[${newPlayerIndex}]`
+            input.placeholder = 'Player Name'
+            input.classList.add('w-full', 'p-2', 'border', 'rounded', 'mt-2')
+        
+            container.appendChild(input)
+        })
+
+        document.getElementById('addGameButton').addEventListener('click', function() {
+            const container = document.getElementById('upcomingGamesContainer')
+            const index = container.children.length
+
+            var gameDiv = document.createElement('div')
+            gameDiv.innerHTML = 
+                `<input type="text" name="upcomingGames[${index}][name]" placeholder="Game Name" class="w-full p-2 border rounded mt-2">
+                <input type="text" name="upcomingGames[${index}][date]" placeholder="Game Date" class="w-full p-2 border rounded mt-2">
+                <input type="text" name="upcomingGames[${index}][location]" placeholder="Game Location" class="w-full p-2 border rounded mt-2">
+                <input type="text" name="upcomingGames[${index}][opponent]" placeholder="Opponent" class="w-full p-2 border rounded mt-2">`
+            container.appendChild(gameDiv)
+        })
+        </script>
+        
 
     <%- include('./partials/footer.ejs') %>
 </body>
