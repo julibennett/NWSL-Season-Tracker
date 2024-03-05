@@ -7,47 +7,77 @@
     <div class="w-full max-w-md max-h-[80vh] overflow-auto p-6 bg-white rounded-lg shadow-md">
         <h1 class="text-2xl font-bold text-center mb-4">Create a New Team</h1>
         <h4 class="text-md text-center mb-8">With more teams joining the league each year, there's always more stats to track!</h4>
-
-        <form action="/teams" method="POST" class="font-mono space-y-4">
+    
+        <form action="/teams" method="POST" class="font-mono space-y-4" id="teamForm">
             <div>
                 <label for="name" class="block text-sm font-bold text-gray-700">Team Name</label>
                 <input type="text" name="name" id="name" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
-
-            <div>
-                <label for="roster" class="block text-sm font-bold text-gray-700">Roster</label>
-                <input type="text" name="roster" id="roster" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            </div>
-
-            <div>
-                <label for="upcomingGames" class="block text-sm font-bold text-gray-700">Upcoming Games</label>
-                <input type="text" name="upcomingGames" id="upcomingGames" placeholder="Adding games disabled for now" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" disabled />
+    
+            <div id="rosterContainer">
+                <label class="block text-sm font-bold text-gray-700">Roster</label>
+                <button type="button" id="addPlayerButton" class="mb-2 bg-blue-500 text-white font-bold py-2 px-4 rounded">Add Player</button>
             </div>
             
-
+    
+            <<div id="upcomingGamesContainer">
+                <label class="block text-sm font-bold text-gray-700">Upcoming Games</label>
+                <button type="button" id="addGameButton" class="mb-2 bg-blue-500 text-white font-bold py-2 px-4 rounded">Add Game</button>
+            </div>
+    
             <div>
                 <label for="wins" class="block text-sm font-bold text-gray-700">Wins</label>
                 <input type="number" name="wins" id="wins" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
-
+    
             <div>
                 <label for="losses" class="block text-sm font-bold text-gray-700">Losses</label>
                 <input type="number" name="losses" id="losses" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
-
+    
             <div>
                 <label for="highestScorer" class="block text-sm font-bold text-gray-700">Highest Scoring Player</label>
                 <input type="text" name="highestScorer" id="highestScorer" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
-
+    
             <div>
                 <label for="img" class="block text-sm font-bold text-gray-700">Team Logo</label>
                 <input type="text" name="img" id="img" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
-
+    
             <input type="submit" value="Create Team" class="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" />
         </form>
     </div>
+
+    <script>
+        document.getElementById('addPlayerButton').addEventListener('click', function() {
+            const container = document.getElementById('rosterContainer')
+            const index = container.querySelectorAll('input').length
+
+            var input = document.createElement('input');
+                input.type = 'text';
+                input.name = `roster[]`
+                input.placeholder = 'Player Name'
+                input.classList.add('w-full', 'p-2', 'border', 'rounded', 'mt-2')
+
+            container.appendChild(input)
+        });
+
+
+        document.getElementById('addGameButton').addEventListener('click', function() {
+            const container = document.getElementById('upcomingGamesContainer')
+            const index = container.querySelectorAll('div').length
+        
+            var gameDiv = document.createElement('div')
+            gameDiv.innerHTML = `
+                <input type="text" name="upcomingGames[${index}][name]" placeholder="Game Name" class="w-full p-2 border rounded mt-2">
+                <input type="text" name="upcomingGames[${index}][date]" placeholder="Game Date" class="w-full p-2 border rounded mt-2">
+                <input type="text" name="upcomingGames[${index}][location]" placeholder="Game Location" class="w-full p-2 border rounded mt-2">
+                <input type="text" name="upcomingGames[${index}][opponent]" placeholder="Opponent" class="w-full p-2 border rounded mt-2">
+            `;
+            container.appendChild(gameDiv)
+        })
+        </script>
 
     <%- include("./partials/footer.ejs") %>
 </body>
