@@ -194,10 +194,10 @@ const editForm = async(req, res) => {
 
 // UPDATE
 const update = async(req, res) => {
-    try{
-        const index = req.params.id
-        const team = await Team.findByIdAndUpdate(index, req.body, {new: true})
-        res.redirect('/teams/:id')
+    try {
+        const index = req.params.id;
+        await Team.findByIdAndUpdate(index, req.body, { new: true })
+        res.redirect(`/teams/${index}`)
     } catch(err) {
         console.log(err)
     }
