@@ -1,18 +1,21 @@
-const router = require('express').Router()
+const router = require('express').Router();
+const Attending = require('../models/Attending.js');
 
-const Attendance = require('../models/Attending')
-
-const myGames = async(req, res) => {
+const myGames = async (req, res) => {
     try {
-        const userId = req.session.currentUser
-        const attendances = await Attendance.find({ userId: userId, attending: true })
-            .populate({ path: 'teamId', populate: { path: 'upcomingGames' }})
+        const userId = req.session.currentUser;
+        if (!userId) {
+            console.log('User ID is not available in the session.');
+            return res.redirect('/sessions/new');
+        }
 
-            console.log(attendances)
+        const attendances = await Attending.find({ userId: userId, attending: true })
+            .populate({ path: 'teamId', populate: { path: 'upcomingGames' }});
         
-        let attendingGames = []
-        attendances.forEach(attendance => {
-          
+        console.log(attendances);
+        
+        const attendingGames = [];
+        for (const attendance of attendances) {
             if (attendance.teamId && attendance.teamId.upcomingGames) {
                 const game = attendance.teamId.upcomingGames.find(game => game._id.equals(attendance.gameId));
                 if (game) {
@@ -22,34 +25,32 @@ const myGames = async(req, res) => {
                     });
                 }
             }
-        });
+        }
         
-        console.log(attendingGames)
+        console.log(attendingGames);
 
         res.render('myGames.ejs', {
             attendingGames: attendingGames,
             tabTitle: 'My Games',
             currentUser: req.session.currentUser 
-        })
-        
-    } catch(err) {
-        console.error(err)
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
     }
-}
-
+};
 
 const submitAttendance = async (req, res) => {
     try {
         const { teamId, gameId, attending } = req.body;
-        const userId = req.session.currentUser; // Make sure this is correctly fetching the user's ID
+        const userId = req.session.currentUser;
 
         if (!userId) {
             console.log('User ID is not available in the session.');
-            // Optionally, redirect to login page or send an error message
             return res.redirect('/sessions/new');
         }
 
-        await Attendance.findOneAndUpdate(
+        await Attending.findOneAndUpdate(
             { userId, gameId, teamId },
             { attending: attending === 'true' },
             { upsert: true, new: true }
@@ -58,14 +59,11 @@ const submitAttendance = async (req, res) => {
         res.redirect('/attendance/myGames');
     } catch (err) {
         console.error(err);
-        res.status(500).send("Error processing attendance submission.");
+        res.status(500).send('Internal Server Error');
     }
 };
-
-
-
 
 module.exports = { 
     myGames,
     submitAttendance
-} 
+};

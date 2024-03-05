@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ("./partials/head.ejs") %>
-<body>
+<body class="bg-gray-100 flex flex-col justify-center items-center min-h-screen pt-10 md:pt-2">
     <%- include ("./partials/header.ejs") %>
 
-    <h1>Edit Your Games</h1>
+    <div class="w-full max-w-md max-h-[80vh] overflow-auto p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-center mb-4">Edit the <%=team.name%></h1>
+        <h4 class="text-md text-center mb-8">Make any stats edits you need here!</h4>
+
+        <form action="/teams/<%=team.id%>?_method=PUT" method="POST" class="font-mono space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-bold text-gray-700">Team Name</label>
+                <input value="<%=team.name%>" type="text" name="name" id="name" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div>
+                <label for="roster" class="block text-sm font-bold text-gray-700">Roster</label>
+                <input value="<%=team.roster%>" type="text" name="roster" id="roster" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div>
+                <label for="upcomingGames" class="block text-sm font-bold text-gray-700">Upcoming Games</label>
+                <input type="text" name="upcomingGames" id="upcomingGames" placeholder="Adding games disabled for now" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" disabled />
+            </div>
+
+            <div>
+                <label for="wins" class="block text-sm font-bold text-gray-700">Wins</label>
+                <input value="<%=team.wins%>" type="number" name="wins" id="wins" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div>
+                <label for="losses" class="block text-sm font-bold text-gray-700">Losses</label>
+                <input value="<%=team.losses%>" type="number" name="losses" id="losses" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div>
+                <label for="highestScorer" class="block text-sm font-bold text-gray-700">Highest Scoring Player</label>
+                <input value="<%=team.highestScorer%>" type="text" name="highestScorer" id="highestScorer" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div>
+                <label for="img" class="block text-sm font-bold text-gray-700">Team Logo</label>
+                <input value="<%=team.img%>" type="text" name="img" id="img" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <input type="submit" value="Edit Team" class="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" />
+        </form>
+    </div>
+
 
     <%- include('./partials/footer.ejs') %>
 </body>
