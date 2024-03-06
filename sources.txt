@@ -2,3 +2,19 @@ Soccer Font Source: https://www.cdnfonts.com/soccer-league.font
 
 Tailwind Docs: https://v2.tailwindcss.com/docs
 
+ChatGPT: https://chat.openai.com/ (I've made notes on places when I used this for help! I also used it a few times when I couldn't
+figure something out in the tailwind docs but not too often)
+
+All of the previous apps/homeworks/labs we worked on during this unit! (Definitely my most used source)
+
+Office Hours!
+
+Youtube:
+https://www.youtube.com/watch?v=lmCq2ZtoKQs&t=34s
+https://www.youtube.com/watch?v=YTwOhrVbf-c&t=862s
+https://www.youtube.com/watch?v=arftp8kFBBg&t=291s
+https://www.youtube.com/watch?v=XtnWD0e7970&t=463s
+https://www.youtube.com/watch?v=DenUCuq4G04&pp=ygUVdGFpbHdpbmQgY3NzIHR1dG9yaWFs
+https://www.youtube.com/watch?v=8eQwgc9nc64&pp=ygUVdGFpbHdpbmQgY3NzIHR1dG9yaWFs
+
+All of my image sources are linked within my app in my forms so I'm assuming I don't also need to link them here as well.

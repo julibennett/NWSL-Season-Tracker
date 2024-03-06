@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Attending = require('../models/Attending.js');
 
+// Had ChatGPT help me a little with both my myGames and submitAttendance routes
 const myGames = async (req, res) => {
     try {
         const userId = req.session.currentUser;

@@ -42,6 +42,7 @@
                     <p>Location: <%= game.location %></p>
                     <p>Opponent: <%= game.opponent %></p>
 
+                    <!--Used ChatGPT a little bit for help with this submitAttendance form-->
                     <form action="/attendance/submitAttendance" method="POST">
                         
                         <input type="hidden" name="teamId" value="<%= team._id %>"/>
