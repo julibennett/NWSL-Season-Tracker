@@ -37,7 +37,7 @@ Lets start tracking!!  **It's soccer time!⚽️**
 ![Wire Frames](newwire.jpeg 'New Wireframe')
 
 #### ERD Diagram
-![ERD](erd.jpg 'Home Wireframe')
+![ERD](erd.jpeg 'Home Wireframe')
 
 ## Built With
 
