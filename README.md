@@ -23,10 +23,10 @@ Lets start tracking!!  **It's soccer time!⚽️**
 ![NWSL App Show Page](ShowPage.png 'Show Page')
 
 #### Edit Page
-![NWSL App Edit Page](EditPage.png 'Edit Page')
+![NWSL App Edit Page](EditPage.png 'Edit Page: Users scroll through to fill out all fields')
 
 #### New Team Page
-![NWST App New Team Page](NewPage.png 'New Page')
+![NWST App New Team Page](NewPage.png 'New Page: Users scroll through to fill out all fields')
 
 ![NWSL App My Games Page](myGames.png 'My Games Page')
 
