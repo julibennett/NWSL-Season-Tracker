@@ -7,7 +7,7 @@
 <div class="flex justify-center items-center flex-wrap mx-auto dark:bg-gray-800"">
     <% for(let i = 0; i < teams.length; i++) { %>
         <a href="/teams/<%= teams[i]._id %>" class="m-2"> 
-            <img src="<%= teams[i].img %>" alt="<%= teams[i].name %>" class="w-[40vh] h-[40vh] object-cover border-solid border-4 border-red-500" id="card-image-hover"/>
+            <img src="<%= teams[i].img %>" alt="<%= teams[i].name %>" class="w-[30vh] h-[30vh] object-cover border-solid border-4 border-red-500" id="card-image-hover"/>
         </a>
     <% } %>
 </div>
