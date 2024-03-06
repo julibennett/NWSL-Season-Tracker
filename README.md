@@ -23,10 +23,10 @@ Lets start tracking!!  **It's soccer time!⚽️**
 ![NWSL App Show Page](ShowPage.png 'Show Page')
 
 #### Edit Page
-![NWSL App Edit Page](EditPage.png 'Edit Page (Users scroll through to fill out all fields)')
+![NWSL App Edit Page](EditPage.png 'Edit Page where Users scroll through to fill out all fields')
 
 #### New Team Page
-![NWST App New Team Page](NewPage.png 'New Page (Users scroll through to fill out all fields)')
+![NWST App New Team Page](NewPage.png 'New Page where Users scroll through to fill out all fields')
 
 #### ![NWSL App My Games Page](myGames.png 'My Games Page')
 
@@ -63,8 +63,8 @@ Lets start tracking!!  **It's soccer time!⚽️**
 
 - Adding delete routes to all of the 'Upcoming Games' on each show page, as well as to the games on the 'myGames' tab. Definitely struggled with getting the myGames page to work in the first place, so it definitely needs some more love.
 - Making each player's name on the roster clickable so that you can be redirected to a new page that shows info on each individual player!
--Even more fun styling with Tailwind!
--Add some animation, and more images!
+- Even more fun styling with Tailwind!
+- Add some animation, and more images!
 
 ## Author
 
