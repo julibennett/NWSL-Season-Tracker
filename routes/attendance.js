@@ -9,4 +9,5 @@ router.get('/myGames', attendingController.myGames)
 
 router.post('/submitAttendance', attendingController.submitAttendance)
 
+
 module.exports = router

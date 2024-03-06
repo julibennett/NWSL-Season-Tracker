@@ -8,11 +8,12 @@ const myGames = async (req, res) => {
             console.log('User ID is not available in the session.');
             return res.redirect('/sessions/new');
         }
-
+        console.log(userId)
         const attendances = await Attending.find({ userId: userId, attending: true })
-            .populate({ path: 'teamId', populate: { path: 'upcomingGames' }});
+        // Billie and ChatGPT helped me with this function, most specifically the populate syntax
+            .populate({ path: 'teamId', model: 'Team', populate: { path: 'upcomingGames', model: 'Attending' }});
         
-        console.log(attendances);
+        console.log(attendances, 'attendances');
         
         const attendingGames = [];
         for (const attendance of attendances) {
@@ -27,7 +28,7 @@ const myGames = async (req, res) => {
             }
         }
         
-        console.log(attendingGames);
+        console.log(attendingGames)
 
         res.render('myGames.ejs', {
             attendingGames: attendingGames,
@@ -35,19 +36,19 @@ const myGames = async (req, res) => {
             currentUser: req.session.currentUser 
         });
     } catch (err) {
-        console.error(err);
-        res.status(500).send('Internal Server Error');
+        console.error(err)
+        res.status(500).send('Internal Server Error')
     }
-};
+}
 
 const submitAttendance = async (req, res) => {
     try {
-        const { teamId, gameId, attending } = req.body;
-        const userId = req.session.currentUser;
+        const { teamId, gameId, attending } = req.body
+        const userId = req.session.currentUser
 
         if (!userId) {
-            console.log('User ID is not available in the session.');
-            return res.redirect('/sessions/new');
+            console.log('User ID is not available in the session.')
+            return res.redirect('/sessions/new')
         }
 
         await Attending.findOneAndUpdate(
@@ -56,14 +57,15 @@ const submitAttendance = async (req, res) => {
             { upsert: true, new: true }
         );
 
-        res.redirect('/attendance/myGames');
+        res.redirect('/attendance/myGames')
     } catch (err) {
-        console.error(err);
-        res.status(500).send('Internal Server Error');
+        console.error(err)
+        res.status(500).send('Internal Server Error')
     }
-};
+}
+
 
 module.exports = { 
     myGames,
-    submitAttendance
-};
+    submitAttendance,
+}
