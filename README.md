@@ -28,7 +28,7 @@ Lets start tracking!!  **It's soccer time!⚽️**
 #### New Team Page
 ![NWST App New Team Page](NewPage.png 'New Page (Users scroll through to fill out all fields)')
 
-![NWSL App My Games Page](myGames.png 'My Games Page')
+#### ![NWSL App My Games Page](myGames.png 'My Games Page')
 
 #### Wireframes
 ![Wire Frames](homewire.jpeg 'Home Wireframe')
