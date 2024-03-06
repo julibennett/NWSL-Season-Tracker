@@ -29,10 +29,10 @@ Lets start tracking!!**It's soccer time!!!**
 ![NWST App New Team Page](NewPage.png 'New Page')
 
 #### Wireframes
-![Wire Frames](homewire.jpg 'Home Wireframe')
-![Wire Frames](showwire.jpg 'Show Wireframe')
-![Wire Frames](editwire.jpg 'Edit Wireframe')
-![Wire Frames](newwire.jpg 'New Wireframe')
+![Wire Frames](homewire.jpeg 'Home Wireframe')
+![Wire Frames](showwire.jpeg 'Show Wireframe')
+![Wire Frames](editwire.jpeg 'Edit Wireframe')
+![Wire Frames](newwire.jpeg 'New Wireframe')
 
 #### ERD Diagram
 ![ERD](erd.jpg 'Home Wireframe')
@@ -63,6 +63,8 @@ Lets start tracking!!**It's soccer time!!!**
 - Making each player's name on the roster clickable so that you can be redirected to a new page that shows info on each individual player!
 -Even more fun styling with Tailwind!
 -Add some animation, and more images!
+
+## Author
 
 **Julianna Bennett**
 
