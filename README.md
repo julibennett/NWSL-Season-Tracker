@@ -1,10 +1,10 @@
-# NWSL-Season-Tracker
+# NWSL-Season-Tracker ⚽️
 
 Welcome to the NWSL Season Tracker App! 
 
 If you're a women's soccer fan, this is absolutely the place to be! In this versatile, modern app, users are able to track the stats of all their favorite NWSL teams throughout a given season! Start tracking now, so that you're always up to date on all the action!
 
-Lets start tracking!!**It's soccer time!!!**
+Lets start tracking!!  **It's soccer time!⚽️**
 
 ## Links
 - [Repo](https://github.com/julibennett/NWSL-Season-Tracker 'NWSL-Season-Tracker')
@@ -23,10 +23,12 @@ Lets start tracking!!**It's soccer time!!!**
 ![NWSL App Show Page](ShowPage.png 'Show Page')
 
 #### Edit Page
-![NWSL Edit Page](EditPage.png 'Edit Page')
+![NWSL App Edit Page](EditPage.png 'Edit Page')
 
 #### New Team Page
 ![NWST App New Team Page](NewPage.png 'New Page')
+
+![NWSL App My Games Page](myGames.png 'My Games Page')
 
 #### Wireframes
 ![Wire Frames](homewire.jpeg 'Home Wireframe')
