@@ -52,7 +52,7 @@ Lets start tracking!!  **It's soccer time!⚽️**
 
 ### Method 1 --> Heroku!
 
-- Simply click the Live link in the links section above! That's all, have fun!!
+- This app is deployed on Heroku! Simply click the Live link in the links section above! That's all, have fun!!
 
 ### Method 2 ---> Cloning!
 
