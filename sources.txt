@@ -1,2 +1,4 @@
 Soccer Font Source: https://www.cdnfonts.com/soccer-league.font
 
+Tailwind Docs: https://v2.tailwindcss.com/docs
+
