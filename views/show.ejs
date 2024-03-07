@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <%- include("./partials/head.ejs") %>
 <body class="pt-20 md:pt-16bg-gray-100 min-h-screen">
     <%- include("./partials/header.ejs") %>
 
-    <div class="text-center mb-4">
-        <h2 class="font-bold underline text-center text-3xl mb-4"> <%=team.name.toUpperCase()%> </h2>
+    <div class="text-center mb-4 p-1 dark:bg-gray-800">
+        <h2 class="font-bold underline text-center text-white text-4xl mb-4 "> <%=team.name.toUpperCase()%> </h2>
     </div>
 
-    <div class="flex flex-wrap md:flex-nowrap justify-center md:justify-start">
+    <div class="flex flex-wrap md:flex-nowrap justify-center md:justify-start dark:bg-gray-800 p-4">
         
-        <div class="md:w-1/4 p-4 bg-white shadow-md rounded-lg">
-            <div class="underline text-red-500 mb-2">
+        <div class="md:w-1/4 p-4 dark:bg-gray-800 shadow-md rounded-lg border-solid border-8 border-white">
+            <div class="underline bold text-white mb-2 text-3xl">
                 Roster:
             </div>
-                <div class="roster-list-container">
+                <div class="roster-list-container bg-white rounded">
                     <ul class="list-disc pl-5 list-none">
                         <% team.roster.forEach(player => { %>
                         <li class="text-2xl"><%= player %></li>
@@ -26,7 +26,7 @@
         
         <div class="md:flex-1 p-4">
             
-            <div class="flex justify-around bg-white shadow-md rounded-lg mb-4 p-4">
+            <div class="flex justify-around dark:bg-gray-800 shadow-md rounded-lg mb-4 p-4 border-solid border-8 border-white">
                 <div class="bg-green-500 p-1.5 rounded-lg">Team wins: <%= team.wins %></div>
                 <div class="bg-red-500 p-1.5 rounded-lg">Team losses: <%= team.losses %></div>
                 <div class="bg-blue-500 p-1.5 rounded-lg">Highest Scorer: <%= team.highestScorer %></div>
@@ -35,13 +35,14 @@
             
             <div class="grid grid-cols-2 gap-4">
                 <% team.upcomingGames.forEach((game, index) => { %>
-                <div class="text-center bg-white shadow-md rounded-lg p-4">
-                    <h5>Upcoming Game</h5>
-                    <p>Name: <%= game.name %></p>
-                    <p>Date: <%= game.date %></p>
-                    <p>Location: <%= game.location %></p>
-                    <p>Opponent: <%= game.opponent %></p>
-
+                <div class="text-center bg-white shadow-md rounded-lg p-4 border-solid border-8 border-white">
+                    <div class="">
+                        <h5>Upcoming Game</h5>
+                        <p>Name: <%= game.name %></p>
+                        <p>Date: <%= game.date %></p>
+                        <p>Location: <%= game.location %></p>
+                        <p>Opponent: <%= game.opponent %></p>
+                    </div>
                     <!--Used ChatGPT a little bit for help with this submitAttendance form-->
                     <form action="/attendance/submitAttendance" method="POST">
                         
@@ -67,7 +68,7 @@
         </div>
     </div>
 
-    <div class="text-center">
+    <div class="text-center p-2">
         <a href="/teams/<%= team.id %>/edit" type="button" class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer inline-block">Edit Stats</a>
     
         <form method="POST" action="/teams/<%= team.id %>?_method=DELETE" class="inline-block">

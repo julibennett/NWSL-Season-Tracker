@@ -7,10 +7,10 @@
     <%- include("./partials/header.ejs") %>
 
     <h1 class="text-center text-4xl">My Games</h1>
-    <div class="flex flex-wrap justify-center mt-8">
+    <div class="flex flex-wrap justify-center mt-8 ">
         <% if (attendingGames && attendingGames.length > 0) { %>
             <% attendingGames.forEach(function(game) { %>
-                <div class="bg-white rounded-lg shadow-md m-4 w-full max-w-sm p-6">
+                <div class="bg-red-400 rounded-lg shadow-md m-4 w-full max-w-sm p-6">
                     <h2 class="text-xl font-semibold mb-2"><%= game.name %></h2>
                     <p class="text-gray-700">Date: <%= game.date %></p>
                     <p class="text-gray-700">Location: <%= game.location %></p>
